@@ -46,7 +46,7 @@
       <h1><center>User Registration</center></h1>
       <br>
       <div class="register_main">
-      <form action = "Processing.php" method = "POST">
+      <form action = "Register.php" method = "POST">
           <table id = "user_registration" style="cellpadding:10px;">
               <tr>
                   <td>Username: </td>
