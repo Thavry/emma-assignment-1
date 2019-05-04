@@ -1,0 +1,199 @@
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.nav-item:hover {
+  background-color: white;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  min-height: 870px;
+  background-color: white;
+}
+
+.login_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: lavender;
+}
+
+.username_placeholder {
+  margin: 10px auto;
+}
+
+.register_main {
+  width: 400px;
+  padding: 20px;
+  margin: 0 auto;
+  align-self: center;
+  background-color: lavender;
+}
+
+.contact_detail {
+  background-color: rgba(0, 70, 0, 0.5);
+  color: white;
+  width: 400px;
+  height: 300px;
+  text-align: center;
+  padding: 20px;
+  float: right;
+}
+
+.address-detail {
+  width: 400px;
+  height: 100%;
+  background-color: lavender;
+  text-align: left;
+  padding: 40px;
+  float: right;
+}
+
+table {
+  border-spacing: 10px;
+}
+/* #element-with-background-image {
+   position: relative;
+   background-image: url("//spin.atomicobject.com/wp-content/uploads/20170324102432/portfolio-tips-feature-image.jpg");
+}
+
+#color-overlay {
+   position: relative;
+   top: 0;
+   left: 0;
+   width: 400px;
+   height: 100%;
+   background-color: black;
+   opacity: 0.5;
+} */
+
+.contact {
+  background-image: url("Images/carousel/carPizza.jpg");
+  width: 100%;
+  height: 300px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.contact-main {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+footer {
+  margin-top: 20px;
+  /* position: relative; */
+  /* position: static;
+  clear: both; */
+  height: 100px;
+  background-color: lavender;
+  height: 80px;
+
+  /* display: -webkit-flex;
+  -webkit-align-items: center; */
+  /* align-items: center; */
+  /* align-self:flex-end; */
+}
+
+.col-sm-4 {
+  /* align-self:flex-end; */
+  /* display: -webkit-flex;
+  -webkit-align-items: center; */
+  align-self: center;
+  align-items: center;
+  background-color: lavender;
+}
+
+.col-sm-3 {
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
+  background-color: white;
+}
+
+
+
+/* .row-2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+} */
+
+/* .container-fluid {
+  padding: 0;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+} */
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+
+.fa:hover {
+  opacity: 0.8;
+}
+
+.fa-facebook {
+  margin-left: 10px;
+  color: #3B5998;
+}
+
+.fa-twitter {
+  margin-left: 10px;
+  color: #55ACEE;
+}
+
+.fa-linkedin {
+  margin-left: 10px;
+}
+
+.fa-instagram {
+  margin-left: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 20px;
+}
+/* .button-1 {
+  background-color: rgb(102, 102, 102);
+} */
+
+
+/* body {
+  background-color: black;
+  color: white;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
+} */
+
+/* .form-inline {
+  text-emphasis-color: white;
+} */
