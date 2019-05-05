@@ -18,6 +18,11 @@
         header("location: Login_Form.php"); exit;
       }*/
       include "Navigation.php";
+      include "Processing.php";
+
+      $sql = "SELECT * FROM Menu WHERE category = 'Pizza'";
+      $record = mysqli_query($conn, $sql);
+      $result = mysqli_fetch_all($record, MYSQLI_ASSOC);
     ?>
 
     <main>
@@ -25,49 +30,23 @@
       <h1 id="welcome">Pizza</h1>
       <div class="container">
         <div class="text-center grid-item">
+          <? foreach($result as $key => $value): ?>
           <div class="card text-center">
-            <img class="card-img-top" src="Images/cards/pzSupreme.jpg" alt="Card image cap">
+            <img class="card-img-top" src="Images/cards/<? echo $value['Image'] ?>" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Supreme</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h5 class="card-title"><? echo $value['Item_Name'] ?></h5>
+                <p class="card-text">
+                  <? if (!isset($_SESSION['USERNAME'])): ?>
+                    $<? echo $value['Price']; ?>
+                  <? elseif ($_SESSION['ROLE'] == 'Student'): ?>
+                    $<? echo $value['Price'] * 0.9; ?>
+                  <? else: ?>
+                    $<? echo $value['Price']; ?>
+                  <? endif; ?>
+                </p>
               </div>
           </div>
-        </div>
-        <div class="text-center grid-item">
-          <div class="card text-center">
-            <img class="card-img-top" src="Images/cards/pzHawaiian.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Hawaiian</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-          </div>
-        </div>
-        <div class="text-center  grid-item">
-          <div class="card text-center">
-            <img class="card-img-top" src="Images/cards/pzPepperoni.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Pepperoni</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-          </div>
-        </div>
-        <div class="text-center grid-item">
-          <div class="card text-center">
-            <img class="card-img-top" src="Images/cards/pzSupreme.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Supreme</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-          </div>
-        </div>
-        <div class="text-center grid-item">
-          <div class="card text-center">
-            <img class="card-img-top" src="Images/cards/pzHawaiian.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Hawaiian</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-          </div>
+          <? endforeach; ?>
         </div>
       </div><!-- <div class="container"> -->
 

@@ -20,18 +20,9 @@
       include "Navigation.php";
       include "Processing.php";
 
-      /* $role = "role";
-
-      // Create connection
-      $conn = new mysqli($role);
-      // Check connection
-      if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-      }*/
-
-      $sql = "SELECT * FROM Menu";
+      $sql = "SELECT * FROM Menu WHERE category = 'Beverage'";
       $record = mysqli_query($conn, $sql);
-      $result = mysqli_fetch_array($record, MYSQLI_ASSOC);
+      $result = mysqli_fetch_all($record, MYSQLI_ASSOC);
     ?>
 
     <main>
@@ -39,57 +30,23 @@
       <h1 id="welcome">Beverage</h1>
       <div class="container">
         <div class="text-center grid-item">
+          <? foreach($result as $key => $value): ?>
           <div class="card text-center">
-            <img class="card-img-top" src="<? echo "{$result['Image']}" ?>" alt="Card image cap">
+            <img class="card-img-top" src="Images/cards/<? echo $value['Image'] ?>" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title"><? echo "{$result['Item_Name']}" ?></h5>
+                <h5 class="card-title"><? echo $value['Item_Name'] ?></h5>
                 <p class="card-text">
                   <? if (!isset($_SESSION['USERNAME'])): ?>
-                    $<? echo "{$result['Price']}"; ?>.00
+                    $<? echo $value['Price']; ?>
                   <? elseif ($_SESSION['ROLE'] == 'Student'): ?>
-                    $
+                    $<? echo $value['Price'] * 0.9; ?>
                   <? else: ?>
-                    not student price
+                    Free
                   <? endif; ?>
                 </p>
               </div>
           </div>
-        </div>
-        <div class="text-center grid-item">
-          <div class="card text-center">
-            <img class="card-img-top" src="Images/cards/bvOrangeJuice.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Orange Juice</h5>
-                <p class="card-text">$12.00</p>
-              </div>
-          </div>
-        </div>
-        <div class="text-center  grid-item">
-          <div class="card text-center">
-            <img class="card-img-top" src="Images/cards/bvTequila.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Tequila</h5>
-                <p class="card-text">$12.00</p>
-              </div>
-          </div>
-        </div>
-        <div class="text-center grid-item">
-          <div class="card text-center">
-            <img class="card-img-top" src="Images/cards/bvCoke.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Coke</h5>
-                <p class="card-text">$12.00</p>
-              </div>
-          </div>
-        </div>
-        <div class="text-center grid-item">
-          <div class="card text-center">
-            <img class="card-img-top" src="Images/cards/bvOrangeJuice.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Orange Juice</h5>
-                <p class="card-text">$12.00</p>
-              </div>
-          </div>
+          <? endforeach; ?>
         </div>
       </div><!-- <div class="container"> -->
 
