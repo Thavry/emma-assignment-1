@@ -15,9 +15,6 @@
 
   <?php
     session_start();
-    if(!isset($_SESSION['USERNAME'])){
-      header("location: Login_Form.php"); exit;
-    }
     include "Navigation.php";
   ?>
 
