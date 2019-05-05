@@ -18,6 +18,20 @@
         header("location: Login_Form.php"); exit;
       }*/
       include "Navigation.php";
+      include "Processing.php";
+
+      /* $role = "role";
+
+      // Create connection
+      $conn = new mysqli($role);
+      // Check connection
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }*/
+
+      $sql = "SELECT * FROM Menu";
+      $record = mysqli_query($conn, $sql);
+      $result = mysqli_fetch_array($record, MYSQLI_ASSOC);
     ?>
 
     <main>
@@ -26,14 +40,16 @@
       <div class="container">
         <div class="text-center grid-item">
           <div class="card text-center">
-            <img class="card-img-top" src="Images/cards/bvCoke.jpg" alt="Card image cap">
+            <img class="card-img-top" src="<? echo "{$result['Image']}" ?>" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Coke</h5>
+                <h5 class="card-title"><? echo "{$result['Item_Name']}" ?></h5>
                 <p class="card-text">
                   <? if (!isset($_SESSION['USERNAME'])): ?>
-                    $12.00
+                    $<? echo "{$result['Price']}"; ?>.00
+                  <? elseif ($_SESSION['ROLE'] == 'Student'): ?>
+                    $
                   <? else: ?>
-                    $11.50 (discount for logged in person)
+                    not student price
                   <? endif; ?>
                 </p>
               </div>
