@@ -1,5 +1,5 @@
 <form class = "username"
-      action = "../Processing.php" 
+      action = "Login.php" 
       method = "POST">
     <p>
         <?php
