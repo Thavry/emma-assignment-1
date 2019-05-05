@@ -18,6 +18,8 @@
         header("location: Login_Form.php"); exit;
       }*/
       include "Navigation.php";
+
+      include "Processing.php";
     ?>
 
     <main>
@@ -62,7 +64,7 @@
                     <p><input type = "radio"
                                 name = "Membership"
                                 <?php
-                                if (isset($membership)&&($membership=="student"))
+                                if (isset($role)&&($role=="student"))
                                     echo "checked";
                                 ?>
                                 value = "Student">
@@ -80,7 +82,7 @@
                       <p><input type = "radio"
                                 name = "Membership"
                                 <?php
-                                if (isset($membership)&&($membership=="VIP"))
+                                if (isset($role)&&($role=="VIP"))
                                     echo "checked";
                                 ?>
                                 value = "VIP">
