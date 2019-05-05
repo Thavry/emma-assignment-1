@@ -23,7 +23,7 @@ if(isset($username) && isset($password)){
       $result = mysqli_fetch_array($record, MYSQLI_ASSOC);
       //'Username' should come from the column name of the actual table
       $_SESSION['USERNAME'] = $result['Username'];
-      $_SESSION['MEMBERSHIP'] = $result['Membership Type'];
+      $_SESSION['ROLE'] = $result['Role'];
   }
   else { $_SESSION['INCORRECT_PASSWORD_MESSAGE'] = "FAIL"; }
   /* var_dump($_SERVER['HTTP_REFERER']); */
