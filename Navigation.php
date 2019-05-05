@@ -25,6 +25,9 @@
           <a href="Register_Form.php">Register</a>
         </button>
       <? else: ?>
+        <span style="margin-right: 12px;">
+          <? echo "You are logged in as " .$_SESSION['USERNAME']; ?>
+        </span>
         <button type="button" class="btn btn-outline-primary">
           <a href="Logout.php">Logout</a>
         </button>
