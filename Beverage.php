@@ -29,7 +29,7 @@
 
       <h1 id="welcome">Beverage</h1>
       <div class="container">
-        <div class="text-center grid-item">
+        <div class="grid-item">
           <? foreach($result as $key => $value): ?>
           <div class="card text-center">
             <img class="card-img-top" src="Images/cards/<? echo $value['Image'] ?>" alt="Card image cap">
